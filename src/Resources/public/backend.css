@@ -1,0 +1,26 @@
+.tl_row_inner {
+  display: flex;
+  flex-direction: row;
+}
+.tl_row_inner .art-info {
+  text-align: right;
+  align-self: center;
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  color: #999;
+  padding-left: 10px;
+}
+.tl_row_inner.highlight .art-info {
+  color: #f47c00;
+}
+.tl_row_inner.bold .art-info {
+  font-weight: 500;
+}
+.tl_row_inner.none .art-info {
+  display: none;
+}
+
+/*# sourceMappingURL=backend.css.map */

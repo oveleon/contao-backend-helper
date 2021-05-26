@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_user.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_user.article_info_style.0">
+        <source>Article info style</source>
+        <target>Artikel-Info Stil</target>
+      </trans-unit>
+      <trans-unit id="tl_user.article_info_style.1">
+        <source>Style of the article information in the list.</source>
+        <target>Stil der Artikelinformationen in der Liste.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

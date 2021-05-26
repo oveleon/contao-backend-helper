@@ -1,0 +1,29 @@
+.tl_row_inner{
+  display: flex;
+  flex-direction: row;
+
+  .art-info{
+    text-align: right;
+    align-self: center;
+    flex-grow: 1;
+
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:100%;
+    overflow:hidden;
+    color:#999;
+    padding-left:10px;
+  }
+
+  &.highlight .art-info{
+    color: #f47c00;
+  }
+
+  &.bold .art-info{
+    font-weight: 500;
+  }
+
+  &.none .art-info{
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_article.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_article.article_info.0">
+        <source>Info</source>
+        <target>Info</target>
+      </trans-unit>
+      <trans-unit id="tl_article.article_info.1">
+        <source>More information about this article, which will be displayed in the list.</source>
+        <target>Weitere Informationen über diesen Artikel, welche in der Liste angezeigt werden.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
