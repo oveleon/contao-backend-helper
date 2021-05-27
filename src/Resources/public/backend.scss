@@ -1,18 +1,19 @@
 .tl_row_inner{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   .art-info{
     text-align: right;
     align-self: center;
-    flex-grow: 1;
+    color:#999;
+    box-sizing: border-box;
+    padding-left:10px;
 
     text-overflow:ellipsis;
     white-space:nowrap;
-    width:100%;
+    max-width: 600px;
     overflow:hidden;
-    color:#999;
-    padding-left:10px;
   }
 
   &.highlight .art-info{

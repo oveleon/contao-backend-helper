@@ -18,6 +18,9 @@ class BackendHelper extends Backend
         // Execute the default function
         $strRow  = call_user_func_array(['tl_article', 'addIcon'], [$row, $label]);
 
+        // Wrap content
+        $strRow  = '<span>' . $strRow . '</span>';
+
         // Extend article info
         if(!!$row['article_info'])
         {
