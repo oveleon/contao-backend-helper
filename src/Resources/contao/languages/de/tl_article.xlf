@@ -6,8 +6,8 @@
         <target>Info</target>
       </trans-unit>
       <trans-unit id="tl_article.article_info.1">
-        <source>More information about this article, which will be displayed in the list.</source>
-        <target>Weitere Informationen über diesen Artikel, welche in der Liste angezeigt werden.</target>
+        <source>More information about this article, which will be displayed in the overview. Possible placeholders: [tag], {class}, #id#</source>
+        <target>Weitere Informationen über diesen Artikel, welche zusätzlich in der Übersicht angezeigt werden. Mögliche Platzhalter: [tag], {class}, #id#</target>
       </trans-unit>
     </body>
   </file>

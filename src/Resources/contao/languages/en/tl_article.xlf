@@ -5,7 +5,7 @@
         <source>Info</source>
       </trans-unit>
       <trans-unit id="tl_article.article_info.1">
-        <source>More information about this article, which will be displayed in the list.</source>
+        <source>More information about this article, which will be displayed in the overview. Possible placeholders: [tag], {class}, #id#</source>
       </trans-unit>
     </body>
   </file>
