@@ -16,7 +16,7 @@ class BackendHelper extends Backend
     public function invokeArticleList($row, $label)
     {
         // Execute the default function
-        $strRow  = call_user_func_array(['tl_article', 'addIcon'], [$row, $label]);
+        $strRow =  (new \tl_article())->addIcon($row, $label);
 
         if(!$this->User->article_info_style === 'none')
         {
