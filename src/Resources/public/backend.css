@@ -23,6 +23,7 @@
   border-radius: 6px;
   line-height: 1;
   color: #444;
+  vertical-align: baseline;
 }
 .tl_row_inner .art-info .bh-id:before, .tl_row_inner .art-info .bh-class:before, .tl_row_inner .art-info .bh-tag:before {
   color: #999999;
