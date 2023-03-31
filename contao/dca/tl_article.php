@@ -1,7 +1,9 @@
 <?php
 // Add label callback
+use Oveleon\ContaoBackendHelper\BackendHelper;
+
 $GLOBALS['TL_DCA']['tl_article']['list']['label']['label_callback'] = [
-    Oveleon\ContaoBackendHelper\BackendHelper::class,
+    BackendHelper::class,
     'invokeArticleList'
 ];
 
