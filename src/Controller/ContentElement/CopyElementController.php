@@ -35,7 +35,7 @@ class CopyElementController extends AbstractContentElementController
             if (!$model->linkTitle)
             {
                 $translator          = $container->get('translator');
-                $template->linkTitle = $translator->trans('tl_content.copy', [$model->cteAlias], 'contao_default');
+                $template->linkTitle = $translator->trans('CTE.copyElementID', [$model->cteAlias], 'contao_default');
             }
 
             if ($model->target)
