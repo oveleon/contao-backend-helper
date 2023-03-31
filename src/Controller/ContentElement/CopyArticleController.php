@@ -12,10 +12,10 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(CopyElementController::TYPE, category:'miscellaneous', template:'ce_copyElement')]
-class CopyElementController extends AbstractContentElementController
+#[AsContentElement(CopyArticleController::TYPE, category:'miscellaneous', template:'ce_copyArticle')]
+class CopyArticleController extends AbstractContentElementController
 {
-    public const TYPE = 'copyElement';
+    public const TYPE = 'copyArticle';
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
@@ -26,16 +26,16 @@ class CopyElementController extends AbstractContentElementController
             $token       = $container->get('contao.csrf.token_manager')->getDefaultTokenValue();
             $routePrefix = $container->getParameter('contao.backend.route_prefix');
 
-            $template->href    = vsprintf('%s?do=article&id=%s&table=tl_content&act=paste&mode=copy&rt=%s', [
+            $template->href    = vsprintf('%s?do=article&act=paste&mode=copy&id=%s&rt=%s', [
                 ltrim($routePrefix, '/'), // Make relative
-                $model->cteAlias,
+                $model->articleAlias,
                 $token
             ]);
 
             if (!$model->linkTitle)
             {
                 $translator          = $container->get('translator');
-                $template->linkTitle = $translator->trans('tl_content.copy', [$model->cteAlias], 'contao_default');
+                $template->linkTitle = $translator->trans('CTE.copyArticleID', [$model->articleAlias], 'contao_default');
             }
 
             if ($model->target)

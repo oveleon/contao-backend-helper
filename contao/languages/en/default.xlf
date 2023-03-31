@@ -7,6 +7,15 @@
       <trans-unit id="CTE.copyElement.1">
         <source>Generates a frontend link to copy a specific content element.</source>
       </trans-unit>
+      <trans-unit id="CTE.copyArticle.0">
+        <source>Copy article</source>
+      </trans-unit>
+      <trans-unit id="CTE.copyArticle.1">
+        <source>Generates a frontend link to copy a specific article.</source>
+      </trans-unit>
+      <trans-unit id="CTE.copyArticleID">
+        <source>Duplicate article ID %s</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -8,6 +8,11 @@ Little helpers for working in the Contao backend.
     - <a href="docs/article-information.png" target="_blank">🔎 Example</a>
 
 
-2. **Copy Content Element (Content element)**
+2. **Copy Article (Content element)**
+   - This content element allows you to pick an Article and generate a link in the frontend,
+     that users can click to directly copy the chosen article within the contao backend.
+
+
+3. **Copy Content Element (Content element)**
     - This content element allows you to pick another content element and generate a link in the frontend,
       that users can click to directly copy the chosen content element within the contao backend.
