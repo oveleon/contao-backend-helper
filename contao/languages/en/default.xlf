@@ -16,6 +16,9 @@
       <trans-unit id="CTE.copyArticleID">
         <source>Duplicate article ID %s</source>
       </trans-unit>
+      <trans-unit id="CTE.copyElementID">
+        <source>Duplicate content element ID %s</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

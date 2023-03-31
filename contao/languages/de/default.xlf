@@ -21,6 +21,10 @@
         <source>Duplicate article ID %s</source>
         <target>Artikel ID %s duplizieren</target>
       </trans-unit>
+      <trans-unit id="CTE.copyElementID">
+        <source>Duplicate content element ID %s</source>
+        <target>Inhaltselement ID %s duplizieren</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
