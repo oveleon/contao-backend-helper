@@ -1,11 +1,9 @@
 <?php
-// Add label callback
-use Oveleon\ContaoBackendHelper\BackendHelper;
 
-$GLOBALS['TL_DCA']['tl_article']['list']['label']['label_callback'] = [
-    BackendHelper::class,
-    'invokeArticleList'
-];
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Oveleon\ContaoBackendHelper\EventListener\DataContainer\DataContainerListener;
+
+$GLOBALS['TL_DCA']['tl_article']['list']['label']['label_callback'] = [DataContainerListener::class,'invokeArticleList'];
 
 // Add field
 $GLOBALS['TL_DCA']['tl_article']['fields']['article_info'] = [
@@ -17,6 +15,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['article_info'] = [
 ];
 
 // Extend the default palettes
-Contao\CoreBundle\DataContainer\PaletteManipulator::create()
-    ->addField(['article_info'], 'title_legend', Contao\CoreBundle\DataContainer\PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('default', 'tl_article');
+PaletteManipulator::create()
+    ->addField(['article_info'], 'title_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('default', 'tl_article')
+;
