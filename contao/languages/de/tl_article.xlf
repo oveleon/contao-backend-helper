@@ -1,11 +1,13 @@
 <?xml version="1.0" ?><xliff version="1.1">
-  <file datatype="php" original="src/Resources/contao/languages/en/tl_article.php" source-language="en">
+  <file datatype="php" original="contao/languages/en/tl_article.php" source-language="en" target-language="de">
     <body>
       <trans-unit id="tl_article.article_info.0">
         <source>Info</source>
+        <target>Info</target>
       </trans-unit>
       <trans-unit id="tl_article.article_info.1">
         <source>More information about this article, which will be displayed in the overview. Possible placeholders: [tag], {class}, #id#</source>
+        <target>Weitere Informationen über diesen Artikel, welche zusätzlich in der Übersicht angezeigt werden. Mögliche Platzhalter: [tag], {class}, #id#</target>
       </trans-unit>
     </body>
   </file>

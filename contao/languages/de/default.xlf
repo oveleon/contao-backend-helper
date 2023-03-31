@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="contao/languages/en/default.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="CTE.copyElement.0">
+        <source>Copy content element</source>
+        <target>Inhaltselement kopieren</target>
+      </trans-unit>
+      <trans-unit id="CTE.copyElement.1">
+        <source>Generates a frontend link to copy a specific content element.</source>
+        <target>Erzeugt einen Frontend-Link zum Kopieren eines bestimmten Inhaltselements.</target>
+      </trans-unit>
+      <trans-unit id="CTE.copyArticle.0">
+        <source>Copy article</source>
+        <target>Artikel kopieren</target>
+      </trans-unit>
+      <trans-unit id="CTE.copyArticle.1">
+        <source>Generates a frontend link to copy a specific article.</source>
+        <target>Erzeugt einen Frontend-Link zum Kopieren eines bestimmten Artikels.</target>
+      </trans-unit>
+      <trans-unit id="CTE.copyArticleID">
+        <source>Duplicate article ID %s</source>
+        <target>Artikel ID %s duplizieren</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

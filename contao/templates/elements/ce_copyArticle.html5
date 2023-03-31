@@ -1,0 +1,5 @@
+<?php if ($this->href): ?>
+  <div class="<?= $this->class ?>"<?= $this->cssID ?>>
+    <a href="<?= $this->href ?>"<?php if ($this->titleText): ?> title="<?= $this->titleText ?>"<?php endif; ?><?= $this->attribute ?><?= $this->target ?>><?= $this->linkTitle ?></a>
+  </div>
+<?php endif; ?>
