@@ -12,14 +12,10 @@ use Symfony\Component\Security\Core\Security;
 
 class KernelRequestSubscriber implements EventSubscriberInterface
 {
-    protected $scopeMatcher;
-    protected $security;
-
-    public function __construct(ScopeMatcher $scopeMatcher, Security $security)
-    {
-        $this->scopeMatcher = $scopeMatcher;
-        $this->security     = $security;
-    }
+    public function __construct(
+        protected ScopeMatcher $scopeMatcher,
+        protected Security $security
+    ){}
 
     public static function getSubscribedEvents()
     {
@@ -29,17 +25,6 @@ class KernelRequestSubscriber implements EventSubscriberInterface
     public function onKernelRequest(RequestEvent $e): void
     {
         $request = $e->getRequest();
-
-        /*if ($this->scopeMatcher->isContaoRequest($request))
-        {
-            @var User $user
-            $user = $this->security->getUser();
-
-            if (null !== $user)
-            {
-                $GLOBALS['TL_CSS'][] = 'bundles/contaobackendhelper/frontend/css/backendhelper.css|static';
-            }
-        }*/
 
         if ($this->scopeMatcher->isBackendRequest($request))
         {
