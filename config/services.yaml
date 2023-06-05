@@ -1,9 +1,9 @@
 services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
-        public: true
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
 
-    Oveleon\ContaoBackendHelper\:
-      resource: '../src/'
-      exclude: '../src/{Model,DependencyInjection,Resources}'
+  Oveleon\ContaoBackendHelper\:
+    resource: '../src/'
+    exclude: '../src/{Model,DependencyInjection,Resources}'

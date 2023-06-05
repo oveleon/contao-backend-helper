@@ -17,7 +17,7 @@ class CopyArticleController extends AbstractContentElementController
 {
     public const TYPE = 'copyArticle';
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse($template, ContentModel $model, Request $request): Response
     {
         $container = System::getContainer();
 
