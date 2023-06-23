@@ -10,9 +10,10 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['article_info'] = [
     'exclude'                 => true,
     'inputType'               => 'text',
     'search'                  => true,
-    'eval'                    => array('tl_class'=>'clr'),
+    'eval'                    => array('tl_class'=>'clr', 'decodeEntities'=>true),
     'sql'                     => "text NULL"
 ];
+
 
 // Extend the default palettes
 PaletteManipulator::create()
