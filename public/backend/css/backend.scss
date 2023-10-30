@@ -1,9 +1,28 @@
-.tl_row_inner{
+:root {
+  --bh-token-text: #444;
+  --bh-token-bg: #f1f1f1;
+  --bh-token-border: #999999;
+  --bh-token-content: #999999;
+  --bh-id-bg: #fcdebf;
+  --bh-class-bg: #ebfafe;
+  --bh-highlight-color: var(--contao, #f47c00);
+}
+
+html[data-color-scheme=dark] {
+  --bh-token-text: #bfbfbf;
+  --bh-token-bg: #272a30;
+  --bh-token-border: #3f3f3f;
+  --bh-token-content: #bfbfbf;
+  --bh-id-bg: #1b325f;
+  --bh-class-bg: #212e3d;
+}
+
+.tl_row_inner {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  .art-info{
+  .art-info {
     text-align: right;
     align-self: center;
     color:#999;
@@ -16,48 +35,50 @@
 
     margin: -2px;
     padding: 2px 2px 2px 10px;
+  }
 
-    .bh-id, .bh-class, .bh-tag{
-      font-size: 12px;
-      padding: 0 3px;
-      background-color: #f1f1f1;
-      border: 1px solid #999999;
-      border-radius: 6px;
-      line-height: 1;
-      color: #444;
-      vertical-align: baseline;
+  .bh-id,
+  .bh-class,
+  .bh-tag {
+    font-size: 12px;
+    padding: 0 3px;
+    background-color: var(--bh-token-bg);
+    border: 1px solid var(--bh-token-border);
+    border-radius: 6px;
+    line-height: 1;
+    color: var(--bh-token-text);
+    vertical-align: baseline;
 
-      &:before{
-        color: #999999;
-      }
-    }
-
-    .bh-id{
-      background: rgb(244 124 0 / 25%);
-
-      &:before{
-        content: "#";
-      }
-    }
-
-    .bh-class{
-      background: rgb(0 188 244 / 8%);
-
-      &:before{
-        content: ".";
-      }
+    &:before {
+      color: var(--bh-token-content);
     }
   }
 
-  &.highlight .art-info{
-    color: #f47c00;
+  .bh-id {
+    background: var(--bh-id-bg);
+
+    &:before{
+      content: "#";
+    }
   }
 
-  &.bold .art-info{
+  .bh-class {
+    background: var(--bh-class-bg);
+
+    &:before{
+      content: ".";
+    }
+  }
+
+  &.highlight .art-info {
+    color: var(--bh-highlight-color);
+  }
+
+  &.bold .art-info {
     font-weight: 500;
   }
 
-  &.none .art-info{
+  &.none .art-info {
     display: none;
   }
 }
