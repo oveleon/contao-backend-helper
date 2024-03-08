@@ -36,6 +36,8 @@ class DataContainerListener
             return $strRow;
         }
 
+        $userPlaceholder = StringUtil::deserialize($user->article_info_placeholder, true);
+
         // Wrap content
         $strRow  = '<span>' . $strRow . '</span>';
 
@@ -51,9 +53,9 @@ class DataContainerListener
                     '/\#([^+]+)\#/iU'
                 ],
                 [
-                    '<span class="bh-class">$1</span>',
-                    '<span class="bh-tag">$1</span>',
-                    '<span class="bh-id">$1</span>'
+                    \in_array('class', $userPlaceholder) ? '<span class="bh-class">$1</span>' : '',
+                    \in_array('tag', $userPlaceholder)   ? '<span class="bh-tag">$1</span>'   : '',
+                    \in_array('id', $userPlaceholder)    ? '<span class="bh-id">$1</span>'    : ''
                 ],
                 $hlInfo
             );
