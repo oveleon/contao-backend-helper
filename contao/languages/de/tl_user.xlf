@@ -9,6 +9,14 @@
         <source>Style of the article information in the list.</source>
         <target>Stil der Artikelinformationen in der Liste.</target>
       </trans-unit>
+      <trans-unit id="tl_user.article_info_placeholder.0">
+        <source>Article placeholder</source>
+        <target>Artikel-Info Platzhalter</target>
+      </trans-unit>
+      <trans-unit id="tl_user.article_info_placeholder.1">
+        <source>Define here which placeholders may be output.</source>
+        <target>Definieren Sie hier welche Platzhalter ausgegeben werden dürfen.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

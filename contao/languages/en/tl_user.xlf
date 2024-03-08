@@ -7,6 +7,12 @@
       <trans-unit id="tl_user.article_info_style.1">
         <source>Style of the article information in the list.</source>
       </trans-unit>
+      <trans-unit id="tl_user.article_info_placeholder.0">
+        <source>Article output</source>
+      </trans-unit>
+      <trans-unit id="tl_user.article_info_placeholder.1">
+        <source>Define here which placeholders may be output.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
