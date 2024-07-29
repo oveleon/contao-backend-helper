@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Oveleon\ContaoBackendHelper\EventSubscriber;
 
-use Contao\ArrayUtil;
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Contao\User;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -14,8 +14,9 @@ class KernelRequestSubscriber implements EventSubscriberInterface
 {
     public function __construct(
         protected ScopeMatcher $scopeMatcher,
-        protected Security $security
-    ){}
+        protected Security $security,
+    ) {
+    }
 
     public static function getSubscribedEvents()
     {
