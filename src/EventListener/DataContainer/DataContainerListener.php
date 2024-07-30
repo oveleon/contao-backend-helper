@@ -8,14 +8,14 @@ use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\StringUtil;
 use Contao\User;
 use Doctrine\DBAL\Connection;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class DataContainerListener
 {
     public function __construct(
         protected ContaoFramework $framework,
         protected Connection $connection,
-        protected Security $security,
+        protected TokenStorageInterface $tokenStorage,
     ) {
     }
 
@@ -28,7 +28,7 @@ class DataContainerListener
         $strRow = (new \tl_article())->addIcon($row, $label);
 
         /** @var User $user */
-        $user = $this->security->getUser();
+        $user = $this->tokenStorage->getToken()?->getUser();
 
         if (null === $user || 'none' === $user->article_info_style)
         {
