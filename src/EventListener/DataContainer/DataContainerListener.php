@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Oveleon\ContaoBackendHelper\EventListener\DataContainer;
 
+use Contao\BackendUser;
 use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\StringUtil;
 use Contao\User;
@@ -30,7 +31,7 @@ class DataContainerListener
         /** @var User $user */
         $user = $this->tokenStorage->getToken()?->getUser();
 
-        if (null === $user || 'none' === $user->article_info_style)
+        if (!$user instanceof BackendUser || 'none' === $user->article_info_style)
         {
             return $strRow;
         }
