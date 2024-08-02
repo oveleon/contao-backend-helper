@@ -12,16 +12,14 @@ use Oveleon\ContaoBackendHelper\ContaoBackendHelper;
 
 class Plugin implements BundlePluginInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(ContaoBackendHelper::class)
                 ->setReplace(['contao-backend-helper'])
-                ->setLoadAfter([ContaoCoreBundle::class]
-            ),
+                ->setLoadAfter(
+                    [ContaoCoreBundle::class],
+                ),
         ];
     }
 }

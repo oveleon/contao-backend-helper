@@ -1,37 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Oveleon\ContaoBackendHelper\EventListener\DataContainer;
 
-use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Contao\BackendUser;
 use Contao\CoreBundle\Framework\ContaoFramework;
-use Contao\Database;
-use Contao\DataContainer;
-use Contao\Input;
 use Contao\StringUtil;
 use Contao\User;
 use Doctrine\DBAL\Connection;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class DataContainerListener
 {
     public function __construct(
         protected ContaoFramework $framework,
         protected Connection $connection,
-        protected Security $security
-    ){}
+        protected TokenStorageInterface $tokenStorage,
+    ) {
+    }
 
     /**
-     * Adds the article backend info
+     * Adds the article backend info.
      */
     public function invokeArticleList($row, $label): string
     {
         // Execute the default function
-        $strRow =  (new \tl_article())->addIcon($row, $label);
+        $strRow = (new \tl_article())->addIcon($row, $label);
 
         /** @var User $user */
-        $user = $this->security->getUser();
+        $user = $this->tokenStorage->getToken()?->getUser();
 
-        if (null === $user || $user->article_info_style === 'none')
+        if (!$user instanceof BackendUser || 'none' === $user->article_info_style)
         {
             return $strRow;
         }
@@ -39,30 +39,30 @@ class DataContainerListener
         $userPlaceholder = StringUtil::deserialize($user->article_info_placeholder, true);
 
         // Wrap content
-        $strRow  = '<span>' . $strRow . '</span>';
+        $strRow = '<span>'.$strRow.'</span>';
 
         // Extend article info
-        if (!!$row['article_info'])
+        if ((bool) $row['article_info'])
         {
             // Highlight info
-            $hlInfo = html_entity_decode($row['article_info']);
+            $hlInfo = html_entity_decode((string) $row['article_info']);
             $hlInfo = preg_replace(
                 [
                     '/\{([^+]+)\}/iU',
                     '/\[([^+]+)\]/iU',
-                    '/\#([^+]+)\#/iU'
+                    '/\#([^+]+)\#/iU',
                 ],
                 [
-                    \in_array('class', $userPlaceholder) ? '<span class="bh-class">$1</span>' : '',
-                    \in_array('tag', $userPlaceholder)   ? '<span class="bh-tag">$1</span>'   : '',
-                    \in_array('id', $userPlaceholder)    ? '<span class="bh-id">$1</span>'    : ''
+                    \in_array('class', $userPlaceholder, true) ? '<span class="bh-class">$1</span>' : '',
+                    \in_array('tag', $userPlaceholder, true) ? '<span class="bh-tag">$1</span>' : '',
+                    \in_array('id', $userPlaceholder, true) ? '<span class="bh-id">$1</span>' : '',
                 ],
-                $hlInfo
+                $hlInfo,
             );
 
-            $strRow .= '<span class="art-info" title="' . $row['article_info'] . '">' . $hlInfo . '</span>';
+            $strRow .= '<span class="art-info" title="'.$row['article_info'].'">'.$hlInfo.'</span>';
         }
 
-        return '<div class="tl_row_inner ' . ($user->article_info_style ?: '') . '">' . $strRow . '</div>';
+        return '<div class="tl_row_inner '.($user->article_info_style ?: '').'">'.$strRow.'</div>';
     }
 }
