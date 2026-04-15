@@ -17,25 +17,21 @@ html[data-color-scheme=dark] {
   --bh-class-bg: #212e3d;
 }
 
-.tl_row_inner {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.art-info {
+  display: inline-block;
 
-  .art-info {
-    text-align: right;
-    align-self: center;
-    color:#999;
-    box-sizing: border-box;
+  text-align: right;
+  align-self: center;
+  color:#999;
+  box-sizing: border-box;
 
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    max-width: 600px;
-    overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width: 600px;
+  overflow:hidden;
 
-    margin: -2px;
-    padding: 2px 2px 2px 10px;
-  }
+  margin: -2px -2px -2px auto;
+  padding: 2px 2px 2px 10px;
 
   .bh-id,
   .bh-class,
@@ -70,15 +66,15 @@ html[data-color-scheme=dark] {
     }
   }
 
-  &.highlight .art-info {
+  &.highlight {
     color: var(--bh-highlight-color);
   }
 
-  &.bold .art-info {
+  &.bold {
     font-weight: 500;
   }
 
-  &.none .art-info {
+  &.none {
     display: none;
   }
 }

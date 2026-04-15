@@ -38,9 +38,6 @@ class DataContainerListener
 
         $userPlaceholder = StringUtil::deserialize($user->article_info_placeholder, true);
 
-        // Wrap content
-        $strRow = '<span>'.$strRow.'</span>';
-
         // Extend article info
         if ((bool) $row['article_info'])
         {
@@ -60,9 +57,9 @@ class DataContainerListener
                 $hlInfo,
             );
 
-            $strRow .= '<span class="art-info" title="'.$row['article_info'].'">'.$hlInfo.'</span>';
+            $strRow .= '<span class="art-info '.($user->article_info_style ?: '').'" title="'.$row['article_info'].'">'.$hlInfo.'</span>';
         }
 
-        return '<div class="tl_row_inner '.($user->article_info_style ?: '').'">'.$strRow.'</div>';
+        return $strRow;
     }
 }
